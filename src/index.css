@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-/* ------------------------------------------------------------------
-   Samarpan Web Solutions — design tokens
-   Matched to portfolio.owsam22.com (paper / cream / ink / accent)
-------------------------------------------------------------------- */
-
 @theme {
   --color-paper: #f1eee6;
   --color-cream: #e9e5d8;

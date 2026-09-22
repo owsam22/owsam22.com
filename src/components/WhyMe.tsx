@@ -12,7 +12,7 @@ export default function WhyMe() {
           {/* reasons */}
           <div>
             <SectionHead
-              index="04"
+              index="05"
               eyebrow="Why me"
               title="Why businesses pick"
               italic="a person, not an agency."

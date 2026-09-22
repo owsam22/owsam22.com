@@ -114,11 +114,54 @@ function MockPixel() {
   );
 }
 
+function MockSafari() {
+  return (
+    <div className="relative h-full w-full overflow-hidden bg-gradient-to-b from-[#ffb454] via-[#e8844a] to-[#274d2e]">
+      {/* sun */}
+      <div className="absolute left-[18%] top-[16%] h-10 w-10 rounded-full bg-[#fff3d6] shadow-[0_0_24px_6px_rgba(255,243,214,0.5)]" />
+      {/* distant hill */}
+      <div className="absolute -bottom-8 -left-10 h-24 w-72 rounded-[100%] bg-[#1e3d24]" />
+      <div className="absolute -bottom-10 right-[-16%] h-28 w-80 rounded-[100%] bg-[#162f1b]" />
+      {/* tree silhouette */}
+      <div className="absolute bottom-6 right-[16%] h-12 w-1.5 rounded bg-[#0f2413]" />
+      <div className="absolute bottom-14 right-[10%] h-9 w-20 rounded-[100%] bg-[#0f2413]" />
+      {/* grass blades */}
+      {[8, 22, 38, 55, 70, 86].map((x, i) => (
+        <span
+          key={i}
+          className="absolute bottom-0 w-[3px] rounded-t bg-[#0f2413]"
+          style={{ left: `${x}%`, height: `${10 + ((i * 7) % 12)}px` }}
+        />
+      ))}
+      {/* mini booking card */}
+      <div className="absolute left-3 top-3 w-36 rounded-xl border border-ink/15 bg-card/95 p-2.5 shadow-md backdrop-blur">
+        <span className="text-[8px] font-bold uppercase tracking-[0.14em] text-taupe">
+          Rajaji National Park
+        </span>
+        <div className="mt-1.5 space-y-1">
+          <div className="h-1.5 w-4/5 rounded bg-ink/15" />
+          <div className="h-1.5 w-3/5 rounded bg-ink/10" />
+        </div>
+        <div className="mt-2 flex items-center gap-1.5">
+          <span className="rounded-md bg-wa px-2 py-1 text-[8.5px] font-bold text-ink">Book safari</span>
+          <span className="rounded-md border border-ink/15 px-2 py-1 text-[8.5px] font-semibold text-taupe">
+            ₹1,500
+          </span>
+        </div>
+      </div>
+      <span className="absolute bottom-3 left-3 font-mono text-[9px] text-[#f5e9d0]/80">
+        sukoon safari · bookings open
+      </span>
+    </div>
+  );
+}
+
 const MOCKS: Record<Project["mock"], () => React.JSX.Element> = {
   finance: MockFinance,
   chat: MockChat,
   galaxy: MockGalaxy,
   pixel: MockPixel,
+  safari: MockSafari,
 };
 
 /* ------------------------------------------------------------------ */
@@ -142,7 +185,7 @@ export default function Work() {
           eyebrow="Selected work"
           title="What I've already"
           italic="built & shipped."
-          sub="Real products, open source and in the wild. This is the standard of craft your project gets — and every line below is public on GitHub."
+          sub="Client websites live in production, plus products I build in public on GitHub. This is the standard of craft your project gets."
         />
 
         {/* featured — mac window cards */}
@@ -160,7 +203,7 @@ export default function Work() {
                   </div>
 
                   {/* mock screenshot */}
-                  <div className="h-44 overflow-hidden border-b-2 border-ink sm:h-48">
+                  <div className="h-40 overflow-hidden border-b-2 border-ink sm:h-48">
                     <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.035]">
                       <Mock />
                     </div>
@@ -182,16 +225,29 @@ export default function Work() {
                       ))}
                     </div>
 
-                    <div className="mt-6 flex items-center gap-3 border-t border-ink/10 pt-5">
-                      <a
-                        href={p.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-full border-2 border-ink bg-ink px-4 py-2 text-[12.5px] font-bold text-paper transition-all duration-300 hover:bg-coal hover:-translate-y-0.5"
-                      >
-                        View source <ArrowUpRight className="h-3.5 w-3.5" />
-                      </a>
-                      {p.live && (
+                    <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-ink/10 pt-5">
+                      {p.github ? (
+                        <a
+                          href={p.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-full border-2 border-ink bg-ink px-4 py-2 text-[12.5px] font-bold text-paper transition-all duration-300 hover:bg-coal hover:-translate-y-0.5"
+                        >
+                          View source <ArrowUpRight className="h-3.5 w-3.5" />
+                        </a>
+                      ) : (
+                        p.live && (
+                          <a
+                            href={p.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-full border-2 border-ink bg-wa px-4 py-2 text-[12.5px] font-bold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:shadow-hard-sm"
+                          >
+                            {p.liveLabel ?? "Visit live site"} <ArrowUpRight className="h-3.5 w-3.5" />
+                          </a>
+                        )
+                      )}
+                      {p.github && p.live && (
                         <a
                           href={p.live}
                           target="_blank"
@@ -201,9 +257,15 @@ export default function Work() {
                           <ExternalLink className="h-3.5 w-3.5" /> {p.liveLabel ?? "Live demo"}
                         </a>
                       )}
-                      <span className="ml-auto inline-flex items-center gap-1 text-[11px] font-semibold text-taupe">
-                        <Star className="h-3.5 w-3.5 fill-accent text-accent" /> open source
-                      </span>
+                      {p.github ? (
+                        <span className="ml-auto inline-flex items-center gap-1 text-[11px] font-semibold text-taupe">
+                          <Star className="h-3.5 w-3.5 fill-accent text-accent" /> open source
+                        </span>
+                      ) : (
+                        <span className="ml-auto inline-flex items-center gap-1.5 text-[11px] font-semibold text-taupe">
+                          <span className="pulse-dot bg-wa" /> live client site
+                        </span>
+                      )}
                     </div>
                   </div>
                 </article>

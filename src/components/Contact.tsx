@@ -86,10 +86,10 @@ export default function Contact() {
                   <div className="flex items-center gap-2">
                     <a
                       href={`mailto:${CONTACT.email}?subject=Project enquiry — Samarpan Web Solutions`}
-                      className="inline-flex items-center gap-2 rounded-full border border-paper/25 px-5 py-4 text-sm font-semibold text-paper/85 transition-colors duration-300 hover:border-paper/60 hover:text-paper"
+                      className="inline-flex items-center gap-2 rounded-full border border-paper/25 px-4 py-4 text-[13px] font-semibold text-paper/85 transition-colors duration-300 hover:border-paper/60 hover:text-paper sm:px-5 sm:text-sm"
                     >
-                      <Mail className="h-4 w-4" />
-                      {CONTACT.email}
+                      <Mail className="h-4 w-4 shrink-0" />
+                      <span className="break-all">{CONTACT.email}</span>
                     </a>
                     <button
                       onClick={copyEmail}

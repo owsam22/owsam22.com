@@ -15,7 +15,7 @@ export default function FAQ() {
           {/* left */}
           <div className="lg:sticky lg:top-28 lg:self-start">
             <SectionHead
-              index="06"
+              index="07"
               eyebrow="FAQ"
               title="Questions people ask"
               italic="before messaging."
@@ -71,7 +71,7 @@ export default function FAQ() {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.45, ease: EASE }}
                         >
-                          <p className="px-5 pb-6 pl-[52px] text-[14px] leading-relaxed text-ink/75 sm:px-7 sm:pl-[60px]">
+                          <p className="px-5 pb-6 pl-[46px] text-[14px] leading-relaxed text-ink/75 sm:px-7 sm:pl-[60px]">
                             {f.a}
                           </p>
                         </motion.div>

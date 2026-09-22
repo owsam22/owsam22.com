@@ -102,7 +102,7 @@ export default function BriefBuilder() {
         </div>
 
         {/* chat wall */}
-        <div className="wa-wallpaper flex max-h-[380px] min-h-[300px] flex-col gap-2.5 overflow-y-auto p-4 sm:max-h-[420px]">
+        <div className="wa-wallpaper flex max-h-[360px] min-h-[260px] flex-col gap-2.5 overflow-y-auto p-3 sm:max-h-[420px] sm:min-h-[300px] sm:p-4">
           {/* encryption notice */}
           <div className="mx-auto max-w-[280px] rounded-lg bg-[#fdf6c9]/90 px-3 py-1.5 text-center text-[10px] leading-snug text-taupe shadow-sm">
             This chat drafts a real WhatsApp message — nothing is stored here.

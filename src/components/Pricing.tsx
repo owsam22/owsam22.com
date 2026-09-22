@@ -8,7 +8,7 @@ export default function Pricing() {
     <section id="pricing" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHead
-          index="05"
+          index="06"
           eyebrow="Pricing"
           title="Honest prices,"
           italic="fixed before we start."
@@ -30,7 +30,7 @@ export default function Pricing() {
                 >
                   {dark && (
                     <span className="absolute -top-3.5 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-ink bg-accent px-4 py-1 text-[10.5px] font-bold uppercase tracking-[0.14em] text-ink shadow-hard-sm">
-                      <Sparkles className="h-3 w-3" /> Most chosen
+                      <Sparkles className="h-3 w-3" /> Best value
                     </span>
                   )}
 

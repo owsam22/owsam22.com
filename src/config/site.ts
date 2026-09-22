@@ -1,14 +1,3 @@
-/* =====================================================================
-   SAMARPAN WEB SOLUTIONS — SITE CONTENT
-   ---------------------------------------------------------------------
-   ✏️  EDIT EVERYTHING HERE. No backend, no database — this single file
-       drives the whole website. Change text, prices, projects, links…
-       then run `npm run build` and redeploy.
-
-   ⚠️  MOST IMPORTANT: replace WHATSAPP_NUMBER below with your real
-       WhatsApp number in international format (country code, digits
-       only — no "+", no spaces). Example: "919876543210"
-===================================================================== */
 
 /* ---------------------------- CONTACT ------------------------------- */
 
@@ -64,12 +53,12 @@ export const NAV_LINKS = [
 /* ------------------------------ HERO ------------------------------- */
 
 export const HERO = {
-  badge: "Booking new projects for 2026",
+  badge: "project slots open this month",
   titleTop: "Fast websites &",
   titleItalic: "smart tools",
   titleBottom: "that grow your business.",
   subtitle:
-    "Landing pages, web apps and WhatsApp automations — designed, built and shipped by one developer who actually answers your messages. No agencies. No middlemen. No surprises.",
+    "Landing pages, web apps and WhatsApp automations — designed, built and shipped by one developer at launch prices. I keep my client list small on purpose: fewer projects, more hours on yours. No agencies. No middlemen.",
   primaryCta: "Start on WhatsApp",
   secondaryCta: "See my work",
   annotation: "you talk directly to the developer — me ↓",
@@ -77,8 +66,8 @@ export const HERO = {
 
 // ✏️ Update these numbers as you grow.
 export const STATS: { value: number; prefix: string; suffix: string; label: string }[] = [
-  { value: 15, suffix: "+", label: "projects shipped", prefix: "" },
-  { value: 3, suffix: "–7", label: "days for a landing page", prefix: "" },
+  { value: 6, suffix: "/6", label: "happy clients — every single one", prefix: "" },
+  { value: 2, suffix: "-4", label: "days for a landing page", prefix: "" },
   { value: 24, suffix: "h", label: "max. reply time", prefix: "<" },
   { value: 100, suffix: "%", label: "built by me, end to end", prefix: "" },
 ];
@@ -129,7 +118,7 @@ export const SERVICES: Service[] = [
       "WhatsApp / contact forms wired straight to your phone",
       "Google Maps, reviews, menus, galleries — whatever you need",
     ],
-    priceHint: "from ₹9,999",
+    priceHint: "from ₹5,999",
     waMessage:
       "Hi Samarpan! I need a business website. Can we discuss what it would look like for my business?",
   },
@@ -159,7 +148,7 @@ export const SERVICES: Service[] = [
       "AI features — chatbots, summarizers, smart search for your data",
       "Scheduled reports delivered to your inbox or WhatsApp",
     ],
-    priceHint: "from ₹14,999",
+    priceHint: "from ₹9,999",
     waMessage:
       "Hi Samarpan! I'm interested in automating parts of my business. The most time-consuming thing I do is:",
   },
@@ -174,7 +163,7 @@ export const SERVICES: Service[] = [
       "Bug fixes, broken forms, mobile layout repairs",
       "Honest audit first: I'll tell you what to fix and what to skip",
     ],
-    priceHint: "from ₹4,999",
+    priceHint: "from ₹2,999",
     waMessage:
       "Hi Samarpan! My current website needs fixing / a refresh. Here's the link:",
   },
@@ -191,13 +180,26 @@ export type Project = {
   year: string;
   description: string;
   stack: string[];
-  github: string;
-  live: string;
+  github: string; // "" = no public repo (client work) — source button hides automatically
+  live: string; //   "" = no live link — demo button hides automatically
   liveLabel?: string;
-  mock: "finance" | "chat" | "galaxy" | "pixel";
+  mock: "finance" | "chat" | "galaxy" | "pixel" | "safari";
 };
 
 export const FEATURED_WORK: Project[] = [
+  {
+    name: "Sukoon Safari",
+    windowTitle: "rajajijunglesafaribooking.com — live & booking",
+    category: "Client website",
+    year: "2025",
+    description:
+      "A complete safari booking website for Rajaji National Park — safari timings, zone details, transparent packages and instant WhatsApp booking. Clean, fast and built to convert visitors into reservations.",
+    stack: ["React", "WhatsApp Booking", "SEO", "Mobile-first"],
+    github: "",
+    live: "https://www.rajajijunglesafaribooking.com/",
+    liveLabel: "Visit live site",
+    mock: "safari",
+  },
   {
     name: "Accrue",
     windowTitle: "accrue — finance, finally organised",
@@ -223,18 +225,6 @@ export const FEATURED_WORK: Project[] = [
     mock: "chat",
   },
   {
-    name: "Git Galaxy",
-    windowTitle: "git-galaxy — the open-source universe",
-    category: "3D experience",
-    year: "2025",
-    description:
-      "An immersive 3D universe where every GitHub profile is a star system and every repo a planet — cinematic camera flights included.",
-    stack: ["Three.js", "GitHub API", "GLSL"],
-    github: "https://github.com/owsam22/git-galaxy",
-    live: "",
-    mock: "galaxy",
-  },
-  {
     name: "Pixel Engineer",
     windowTitle: "pixel-engineer — a tiny living world",
     category: "Interactive art",
@@ -247,6 +237,30 @@ export const FEATURED_WORK: Project[] = [
     mock: "pixel",
   },
 ];
+
+/* -------------------------- TESTIMONIALS -----------------------------
+   ✏️ EDIT quotes freely — add client real names when allowed.        */
+
+export type Testimonial = {
+  quote: string;
+  author: string;
+  role: string;
+  project: string;
+  url: string;
+};
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    quote:
+      "I had a great experience working with Samarpan for my Rajaji Jungle Safari booking website. He did an excellent job from start to finish. The website is clean, fast, user-friendly, and exactly as I wanted. He understood my requirements perfectly and completed the work with professionalism and on time. Highly recommended to anyone looking for a reliable website developer. Thank you, Samarpan, for your amazing work and support!",
+    author: "Aadil Bhadana",
+    role: "Owner, Sukoon Safari",
+    project: "rajajijunglesafaribooking.com",
+    url: "https://www.rajajijunglesafaribooking.com/",
+  },
+];
+
+export const CLIENT_PROOF_NOTE = "6 clients so far — and all 6 are happy clients.";
 
 export const MORE_WORK = [
   {
@@ -269,14 +283,7 @@ export const MORE_WORK = [
     tag: "Open source",
     github: "https://github.com/owsam22/under-construction-page",
     live: "",
-  },
-  {
-    name: "Chat4Fun",
-    note: "Hackathon chat app with real-time content filtering — 4th place, CodeDay.",
-    tag: "Awarded",
-    github: "https://samarpanportfolio.live",
-    live: "",
-  },
+  }
 ];
 
 /* ----------------------------- PROCESS ------------------------------ */
@@ -318,6 +325,10 @@ export const WHY_ME = [
   {
     title: "You talk to the developer",
     text: "No account managers, no ticket queues, no “let me check with the tech team”. The person you message is the person who builds.",
+  },
+  {
+    title: "Few clients, full attention",
+    text: "I keep my client list deliberately small — six right now, and all six are happy. Your project gets my best hours, not my leftovers, and every detail gets a second look.",
   },
   {
     title: "Fixed quotes, on paper",
@@ -363,8 +374,8 @@ export const PLANS: Plan[] = [
   {
     name: "Starter Site",
     blurb: "Get online properly — fast.",
-    price: "₹9,999",
-    priceNote: "onwards · one-time",
+    price: "₹5,999",
+    priceNote: "onwards · launch rate · one-time",
     features: [
       "1–3 page website, mobile-first",
       "WhatsApp & contact integration",
@@ -378,8 +389,8 @@ export const PLANS: Plan[] = [
   {
     name: "Business Website",
     blurb: "The full presence that sells for you.",
-    price: "₹24,999",
-    priceNote: "onwards · one-time",
+    price: "₹9,999",
+    priceNote: "onwards · launch rate · one-time",
     features: [
       "Up to 10 pages + blog / updates section",
       "Copy polish & conversion-focused layout",
@@ -408,7 +419,7 @@ export const PLANS: Plan[] = [
 ];
 
 export const PRICING_NOTE =
-  "Every quote is fixed in writing before work starts. Not sure which fits? Message me — a 15-minute chat is free and genuinely useful.";
+  "These are launch rates — I'm building my name, so you get senior-level attention at a fraction of agency prices. Every quote is fixed in writing before work starts. Not sure which fits? Message me — a 15-minute chat is free and genuinely useful.";
 
 /* ------------------------------- FAQ -------------------------------- */
 
@@ -419,7 +430,7 @@ export const FAQS = [
   },
   {
     q: "How long does a website take?",
-    a: "A landing page: 3–7 days. A full business website: 1–3 weeks. Web apps and automations: 3–6 weeks depending on scope — you'll get an exact timeline in your quote, and I stick to it.",
+    a: "A landing page: 2-4 days. A full business website: 1–2 weeks. Web apps and automations: 2–4 weeks depending on scope — you'll get an exact timeline in your quote, and I stick to it.",
   },
   {
     q: "I don't have a domain or hosting. Is that a problem?",
@@ -456,6 +467,6 @@ export const BRIEF = {
   botAfterPick: "Nice. Anything else? You can pick more than one.",
   botDone: "Got it. Your message is ready — hit send and I'll personally reply within 24 hours.",
   needOptions: ["A business website", "A web app / tool", "Automation for my work", "Fixing my current site"],
-  budgetOptions: ["Under ₹10k", "₹10k – ₹30k", "₹30k+", "Not sure yet"],
+  budgetOptions: ["Under ₹6k", "₹6k – ₹15k", "₹15k+", "Not sure yet"],
   sendLabel: "Send on WhatsApp",
 };

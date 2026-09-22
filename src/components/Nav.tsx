@@ -42,7 +42,7 @@ export default function Nav() {
               <span className="serif-i text-xl leading-none">S</span>
               <span className="absolute -right-1.5 -top-1.5 h-3 w-3 rounded-full border-2 border-paper bg-accent" />
             </span>
-            <span className="leading-tight">
+            <span className="hidden leading-tight min-[420px]:block">
               <span className="display block text-[15px] font-bold tracking-tight">Samarpan</span>
               <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-taupe">
                 Web Solutions
@@ -67,6 +67,8 @@ export default function Nav() {
           <div className="flex items-center gap-3">
             <a
               href={CONTACT.portfolioUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="display hidden items-center gap-1.5 text-[13px] font-semibold text-ink/70 transition-colors hover:text-ink md:inline-flex"
             >
               View Portfolio <ArrowUpRight className="h-3.5 w-3.5" />
@@ -134,21 +136,25 @@ export default function Nav() {
                   className="group flex items-baseline gap-4 border-b border-paper/10 py-4"
                 >
                   <span className="display text-xs font-bold text-accent">0{i + 1}</span>
-                  <span className="display text-4xl font-semibold tracking-tight transition-transform duration-300 group-hover:translate-x-2">
+                  <span className="display text-3xl font-semibold tracking-tight transition-transform duration-300 group-hover:translate-x-2 sm:text-4xl">
                     {l.label}
                   </span>
                 </motion.a>
               ))}
               <motion.a
-                href="#contact"
-                onClick={() => setOpen(false)}
+                href={CONTACT.portfolioUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, x: -28 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.42, duration: 0.6, ease: EASE }}
                 className="group flex items-baseline gap-4 py-4"
               >
                 <span className="display text-xs font-bold text-accent">0{NAV_LINKS.length + 1}</span>
-                <span className="display text-4xl font-semibold tracking-tight">Contact</span>
+                <span className="display flex items-center gap-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                  View Portfolio
+                  <ArrowUpRight className="h-6 w-6 text-accent sm:h-7 sm:w-7" />
+                </span>
               </motion.a>
             </nav>
             <div className="relative px-8 pb-10">

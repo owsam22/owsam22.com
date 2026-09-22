@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import Services from "./components/Services";
 import Work from "./components/Work";
+import Testimonial from "./components/Testimonial";
 import Process from "./components/Process";
 import WhyMe from "./components/WhyMe";
 import Pricing from "./components/Pricing";
@@ -12,10 +13,6 @@ import Footer from "./components/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import { MARQUEE_SERVICES, MARQUEE_VALUES } from "./config/site";
 
-/* =====================================================================
-   SAMARPAN WEB SOLUTIONS — one page, frontend only.
-   All editable content lives in src/config/site.ts
-===================================================================== */
 
 export default function App() {
   return (
@@ -36,6 +33,7 @@ export default function App() {
         <Marquee items={MARQUEE_VALUES} dark={false} slow reverse />
 
         <Work />
+        <Testimonial />
         <Process />
         <WhyMe />
 

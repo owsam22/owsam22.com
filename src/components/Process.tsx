@@ -8,7 +8,7 @@ export default function Process() {
     <section id="process" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHead
-          index="03"
+          index="04"
           eyebrow="How it works"
           title="From first message to launch,"
           italic="no chaos."

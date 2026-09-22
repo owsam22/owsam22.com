@@ -15,8 +15,8 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-32 sm:px-8 sm:pt-40 lg:pb-24">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
+      <div className="relative mx-auto max-w-7xl px-4 pb-14 pt-28 sm:px-8 sm:pt-36 lg:pb-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           {/* ------------------------------ copy ------------------------------ */}
           <div className="relative">
             <motion.div
@@ -33,7 +33,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 34 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.12, ease: EASE }}
-              className="display mt-6 text-[42px] font-semibold leading-[1.04] tracking-tight text-balance sm:text-6xl lg:text-[64px]"
+              className="display mt-6 text-[clamp(2.3rem,10.5vw,2.9rem)] font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-[64px]"
             >
               {HERO.titleTop}
               <br />
@@ -91,7 +91,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.5, ease: EASE }}
-              className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-ink/10 pt-8 sm:grid-cols-4"
+              className="mt-12 grid grid-cols-2 gap-x-4 gap-y-7 border-t border-ink/10 pt-7 sm:grid-cols-4 sm:gap-x-6"
             >
               {STATS.map((s) => (
                 <div key={s.label} className="flex flex-col">

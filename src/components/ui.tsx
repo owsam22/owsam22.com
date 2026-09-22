@@ -63,7 +63,7 @@ export function SectionHead({
       </Reveal>
       <Reveal delay={0.08}>
         <h2
-          className={`display max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl ${
+          className={`display max-w-3xl text-[2rem] leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl ${
             dark ? "text-paper" : "text-ink"
           }`}
         >
