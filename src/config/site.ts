@@ -191,7 +191,7 @@ export const FEATURED_WORK: Project[] = [
     name: "Sukoon Safari",
     windowTitle: "rajajijunglesafaribooking.com — live & booking",
     category: "Client website",
-    year: "2025",
+    year: "2026",
     description:
       "A complete safari booking website for Rajaji National Park — safari timings, zone details, transparent packages and instant WhatsApp booking. Clean, fast and built to convert visitors into reservations.",
     stack: ["React", "WhatsApp Booking", "SEO", "Mobile-first"],
@@ -204,7 +204,7 @@ export const FEATURED_WORK: Project[] = [
     name: "Accrue",
     windowTitle: "accrue — finance, finally organised",
     category: "Full-stack SaaS",
-    year: "2025",
+    year: "2026",
     description:
       "A personal finance manager with multi-account tracking, bills, budgets and seamless cross-device sync through one unified backend.",
     stack: ["React", "Node.js", "MongoDB", "Google Sync"],
