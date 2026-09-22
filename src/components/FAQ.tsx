@@ -9,9 +9,9 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+    <section id="faq" className="relative py-16 sm:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           {/* left */}
           <div className="lg:sticky lg:top-28 lg:self-start">
             <SectionHead
@@ -32,7 +32,7 @@ export default function FAQ() {
           </div>
 
           {/* accordion */}
-          <div className="flex flex-col gap-3.5">
+          <div className="flex flex-col gap-3 sm:gap-3.5">
             {FAQS.map((f, i) => {
               const isOpen = open === i;
               return (
@@ -44,23 +44,23 @@ export default function FAQ() {
                   >
                     <button
                       onClick={() => setOpen(isOpen ? null : i)}
-                      className="flex w-full items-center gap-4 px-5 py-4.5 text-left sm:px-7 sm:py-5"
+                      className="flex w-full items-center gap-3 px-4 py-3.5 text-left sm:gap-4 sm:px-7 sm:py-5"
                       aria-expanded={isOpen}
                     >
                       <span className={`display text-xs font-bold ${isOpen ? "text-accent" : "text-taupe"}`}>
                         0{i + 1}
                       </span>
-                      <span className="display flex-1 text-[15px] font-bold tracking-tight sm:text-lg">
+                      <span className="display flex-1 text-sm font-bold tracking-tight sm:text-lg">
                         {f.q}
                       </span>
                       <motion.span
                         animate={{ rotate: isOpen ? 45 : 0 }}
                         transition={{ duration: 0.35, ease: EASE }}
-                        className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border-2 ${
+                        className={`grid h-7 w-7 shrink-0 place-items-center rounded-full border-2 sm:h-8 sm:w-8 ${
                           isOpen ? "border-ink bg-ink text-paper" : "border-ink/20 text-ink"
                         }`}
                       >
-                        <Plus className="h-4 w-4" strokeWidth={2.6} />
+                        <Plus className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={2.6} />
                       </motion.span>
                     </button>
                     <AnimatePresence initial={false}>
@@ -71,7 +71,7 @@ export default function FAQ() {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.45, ease: EASE }}
                         >
-                          <p className="px-5 pb-6 pl-[46px] text-[14px] leading-relaxed text-ink/75 sm:px-7 sm:pl-[60px]">
+                          <p className="px-4 pb-4 pl-9 text-[13px] leading-relaxed text-ink/75 sm:px-7 sm:pb-6 sm:pl-[60px] sm:text-[14px]">
                             {f.a}
                           </p>
                         </motion.div>
@@ -87,12 +87,12 @@ export default function FAQ() {
                 href={waLink("Hi Samarpan! I have a question that's not on your FAQ:")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group mt-2 flex items-center justify-between rounded-2xl border-2 border-dashed border-ink/30 bg-transparent px-5 py-4 transition-all duration-300 hover:border-ink hover:bg-card sm:px-7"
+                className="group mt-2 flex flex-col items-start justify-between gap-2 rounded-2xl border-2 border-dashed border-ink/30 bg-transparent px-4 py-3.5 transition-all duration-300 hover:border-ink hover:bg-card sm:flex-row sm:items-center sm:px-7 sm:py-4"
               >
-                <span className="display text-[15px] font-bold text-taupe transition-colors group-hover:text-ink">
+                <span className="display text-sm font-bold text-taupe transition-colors group-hover:text-ink sm:text-[15px]">
                   Something else on your mind?
                 </span>
-                <span className="serif-i text-lg text-accent">ask me on WhatsApp →</span>
+                <span className="serif-i text-base text-accent sm:text-lg">ask me on WhatsApp →</span>
               </a>
             </Reveal>
           </div>

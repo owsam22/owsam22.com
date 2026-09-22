@@ -50,10 +50,10 @@ export function SectionHead({
 }) {
   const alignCls = align === "center" ? "items-center text-center" : "items-start";
   return (
-    <div className={`flex flex-col gap-5 ${alignCls}`}>
+    <div className={`flex flex-col gap-3.5 sm:gap-5 ${alignCls}`}>
       <Reveal>
         <span
-          className={`inline-flex items-center gap-3 rounded-full border px-4 py-1.5 text-[11px] font-semibold tracking-[0.18em] uppercase ${
+          className={`inline-flex items-center gap-2.5 rounded-full border px-3.5 py-1 text-[10px] font-semibold tracking-[0.16em] uppercase sm:gap-3 sm:px-4 sm:py-1.5 sm:text-[11px] sm:tracking-[0.18em] ${
             dark ? "border-paper/25 text-paper/70" : "border-ink/20 text-taupe"
           }`}
         >
@@ -63,7 +63,7 @@ export function SectionHead({
       </Reveal>
       <Reveal delay={0.08}>
         <h2
-          className={`display max-w-3xl text-[2rem] leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl ${
+          className={`display max-w-3xl text-[clamp(1.75rem,7vw,2.25rem)] font-semibold leading-[1.1] tracking-tight text-balance sm:text-5xl lg:text-6xl ${
             dark ? "text-paper" : "text-ink"
           }`}
         >
@@ -72,7 +72,7 @@ export function SectionHead({
       </Reveal>
       {sub && (
         <Reveal delay={0.16}>
-          <p className={`max-w-xl text-base leading-relaxed sm:text-lg ${dark ? "text-paper/60" : "text-taupe"}`}>
+          <p className={`max-w-xl text-sm leading-relaxed sm:text-lg ${dark ? "text-paper/60" : "text-taupe"}`}>
             {sub}
           </p>
         </Reveal>

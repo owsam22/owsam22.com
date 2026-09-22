@@ -16,14 +16,14 @@ import { MARQUEE_SERVICES, MARQUEE_VALUES } from "./config/site";
 
 export default function App() {
   return (
-    <div className="grain relative min-h-screen bg-paper text-ink">
+    <div className="grain relative min-h-screen overflow-x-hidden bg-paper text-ink">
       <Nav />
 
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
 
         {/* dark ticker under hero — slightly tilted for editorial energy */}
-        <div className="relative -mx-2 -rotate-1">
+        <div className="relative -mx-2 -rotate-1 overflow-hidden sm:overflow-visible">
           <Marquee items={MARQUEE_SERVICES} />
         </div>
 

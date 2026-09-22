@@ -30,7 +30,7 @@ export default function WhatsAppFloat() {
       }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="group fixed bottom-5 right-5 z-[60] flex items-center gap-2 sm:bottom-7 sm:right-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 rounded-full"
+      className="group fixed bottom-4 right-4 z-[60] flex items-center gap-2 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 sm:bottom-7 sm:right-7"
     >
       {/* Animated Tooltip */}
       <AnimatePresence>
@@ -48,7 +48,7 @@ export default function WhatsAppFloat() {
       </AnimatePresence>
 
       {/* Button Body with Pulse Ring */}
-      <span className="relative grid h-14 w-14 place-items-center rounded-full border-2 border-ink bg-wa text-ink shadow-hard">
+      <span className="relative grid h-12 w-12 place-items-center rounded-full border-2 border-ink bg-wa text-ink shadow-hard sm:h-14 sm:w-14">
         {/* Continuous Ping / Pulse Effect */}
         <span
           className="absolute inset-0 -z-10 h-full w-full animate-ping rounded-full bg-wa/40"
@@ -67,7 +67,7 @@ export default function WhatsAppFloat() {
           className="absolute inset-0 rounded-full border border-wa/20"
         />
 
-        <WhatsAppIcon className="relative h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
+        <WhatsAppIcon className="relative h-6 w-6 transition-transform duration-300 group-hover:scale-110 sm:h-7 sm:w-7" />
       </span>
     </motion.a>
   );

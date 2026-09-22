@@ -15,15 +15,15 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 pb-14 pt-28 sm:px-8 sm:pt-36 lg:pb-24">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
+      <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-24 sm:px-8 sm:pb-20 sm:pt-36 lg:pb-24">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
           {/* ------------------------------ copy ------------------------------ */}
           <div className="relative">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: EASE }}
-              className="inline-flex items-center gap-2.5 rounded-full border border-ink/15 bg-card px-4 py-2 text-xs font-semibold text-ink shadow-hard-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-card px-3.5 py-1.5 text-xs font-semibold text-ink shadow-hard-sm sm:gap-2.5 sm:px-4 sm:py-2"
             >
               <span className="pulse-dot bg-wa" />
               {HERO.badge}
@@ -33,7 +33,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 34 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.12, ease: EASE }}
-              className="display mt-6 text-[clamp(2.3rem,10.5vw,2.9rem)] font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-[64px]"
+              className="display mt-5 text-[clamp(2.1rem,8.5vw,3rem)] font-semibold leading-[1.08] tracking-tight text-balance sm:mt-6 sm:text-6xl lg:text-[64px]"
             >
               {HERO.titleTop}
               <br />
@@ -45,7 +45,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 26 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.24, ease: EASE }}
-              className="mt-6 max-w-xl text-base leading-relaxed text-taupe sm:text-lg"
+              className="mt-5 max-w-xl text-base leading-relaxed text-taupe sm:mt-6 sm:text-lg"
             >
               {HERO.subtitle}
             </motion.p>
@@ -55,7 +55,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 26 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.36, ease: EASE }}
-              className="relative mt-9 flex flex-wrap items-center gap-4 md:mt-16"
+              className="relative mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 md:mt-16"
             >
               {/* annotation floats above, arrow points at the WhatsApp button */}
               <motion.div
@@ -72,14 +72,14 @@ export default function Hero() {
                 href={waLink(DEFAULT_WA_MESSAGE)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 rounded-full border-2 border-ink bg-wa px-6 py-3.5 text-[15px] font-bold text-ink shadow-hard transition-all duration-300 hover:-translate-y-1 hover:shadow-hard-lg active-press"
+                className="inline-flex w-full items-center justify-center gap-2.5 rounded-full border-2 border-ink bg-wa px-6 py-3.5 text-sm font-bold text-ink shadow-hard transition-all duration-300 hover:-translate-y-1 hover:shadow-hard-lg active-press sm:w-auto sm:text-[15px]"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 {HERO.primaryCta}
               </a>
               <a
                 href="#work"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-ink/20 bg-card/70 px-6 py-3.5 text-[15px] font-bold text-ink backdrop-blur transition-all duration-300 hover:border-ink hover:bg-card"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-ink/20 bg-card/70 px-6 py-3.5 text-sm font-bold text-ink backdrop-blur transition-all duration-300 hover:border-ink hover:bg-card sm:w-auto sm:text-[15px]"
               >
                 {HERO.secondaryCta}
                 <ArrowDown className="h-4 w-4" />
@@ -91,14 +91,14 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.5, ease: EASE }}
-              className="mt-12 grid grid-cols-2 gap-x-4 gap-y-7 border-t border-ink/10 pt-7 sm:grid-cols-4 sm:gap-x-6"
+              className="mt-10 grid grid-cols-2 gap-x-4 gap-y-5 border-t border-ink/10 pt-6 sm:mt-12 sm:grid-cols-4 sm:gap-x-6 sm:pt-7"
             >
               {STATS.map((s) => (
                 <div key={s.label} className="flex flex-col">
-                  <dd className="display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+                  <dd className="display text-2xl font-bold tracking-tight text-ink sm:text-3xl lg:text-4xl">
                     <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} />
                   </dd>
-                  <dt className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe">
+                  <dt className="mt-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-taupe sm:text-[11px]">
                     {s.label}
                   </dt>
                 </div>

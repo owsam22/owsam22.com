@@ -78,31 +78,31 @@ export default function BriefBuilder() {
       {/* phone card */}
       <motion.div
         initial={{ opacity: 0, y: 40, rotate: 2 }}
-        animate={{ opacity: 1, y: 0, rotate: -1.2 }}
+        animate={{ opacity: 1, y: 0, rotate: 0 }}
         transition={{ duration: 1, delay: 0.35, ease: EASE }}
-        className="relative overflow-hidden rounded-3xl border-2 border-ink bg-wa-chat shadow-hard-lg"
+        className="relative overflow-hidden rounded-2xl border-2 border-ink bg-wa-chat shadow-hard sm:rounded-3xl sm:shadow-hard-lg"
       >
         {/* WA header */}
-        <div className="flex items-center gap-3 border-b-2 border-ink bg-wa-dark px-4 py-3 text-paper">
-          <div className="relative grid h-10 w-10 shrink-0 place-items-center rounded-full border-2 border-paper/20 bg-coal">
-            <span className="serif-i text-lg leading-none text-paper">S</span>
-            <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-wa-dark bg-wa" />
+        <div className="flex items-center gap-2.5 border-b-2 border-ink bg-wa-dark px-3.5 py-2.5 text-paper sm:gap-3 sm:px-4 sm:py-3">
+          <div className="relative grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 border-paper/20 bg-coal sm:h-10 sm:w-10">
+            <span className="serif-i text-base leading-none text-paper sm:text-lg">S</span>
+            <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full border-2 border-wa-dark bg-wa sm:h-3 sm:w-3" />
           </div>
           <div className="min-w-0 flex-1 leading-tight">
-            <p className="display truncate text-sm font-bold">{CONTACT.owner}</p>
-            <p className="truncate text-[11px] text-paper/70">
+            <p className="display truncate text-[13px] font-bold sm:text-sm">{CONTACT.owner}</p>
+            <p className="truncate text-[10.5px] text-paper/70 sm:text-[11px]">
               online · {CONTACT.replyTime}
             </p>
           </div>
-          <div className="flex items-center gap-4 text-paper/80">
-            <Video className="h-4.5 w-4.5" />
-            <Phone className="h-4 w-4" />
-            <MoreVertical className="h-4.5 w-4.5" />
+          <div className="flex items-center gap-2.5 text-paper/80 sm:gap-4">
+            <Video className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
+            <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+            <MoreVertical className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
           </div>
         </div>
 
         {/* chat wall */}
-        <div className="wa-wallpaper flex max-h-[360px] min-h-[260px] flex-col gap-2.5 overflow-y-auto p-3 sm:max-h-[420px] sm:min-h-[300px] sm:p-4">
+        <div className="wa-wallpaper flex max-h-[320px] min-h-[240px] flex-col gap-2.5 overflow-y-auto p-3 sm:max-h-[420px] sm:min-h-[300px] sm:p-4">
           {/* encryption notice */}
           <div className="mx-auto max-w-[280px] rounded-lg bg-[#fdf6c9]/90 px-3 py-1.5 text-center text-[10px] leading-snug text-taupe shadow-sm">
             This chat drafts a real WhatsApp message — nothing is stored here.
@@ -126,7 +126,7 @@ export default function BriefBuilder() {
                 initial={{ opacity: 0, y: 12, scale: 0.96 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.5, ease: EASE }}
-                className="max-w-[88%] rounded-2xl rounded-tl-sm border border-ink/10 bg-card px-3.5 py-2.5 text-[13.5px] leading-relaxed text-ink shadow-sm"
+                className="max-w-[90%] rounded-2xl rounded-tl-sm border border-ink/10 bg-card px-3.5 py-2.5 text-[12.5px] leading-relaxed text-ink shadow-sm sm:max-w-[88%] sm:text-[13.5px]"
               >
                 {BRIEF.botHello}
                 <span className="mt-1 block text-right text-[10px] text-taupe">now</span>
@@ -140,7 +140,7 @@ export default function BriefBuilder() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.5, ease: EASE }}
-              className="flex flex-wrap gap-2 pl-2"
+              className="flex flex-wrap gap-1.5 pl-1 sm:gap-2 sm:pl-2"
             >
               {BRIEF.needOptions.map((n) => {
                 const active = needs.includes(n);
@@ -150,13 +150,13 @@ export default function BriefBuilder() {
                     layout
                     whileTap={{ scale: 0.94 }}
                     onClick={() => toggleNeed(n)}
-                    className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[12px] font-semibold shadow-sm transition-colors duration-200 ${
+                    className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] font-semibold shadow-sm transition-colors duration-200 sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[12px] ${
                       active
                         ? "border-wa-deep bg-wa-deep text-paper"
                         : "border-wa-deep/40 bg-card/90 text-wa-deep hover:bg-wa/10"
                     }`}
                   >
-                    {active ? <Check className="h-3.5 w-3.5" /> : <Plus className="h-3.5 w-3.5" />}
+                    {active ? <Check className="h-3 w-3 sm:h-3.5 sm:w-3.5" /> : <Plus className="h-3 w-3 sm:h-3.5 sm:w-3.5" />}
                     {n}
                   </motion.button>
                 );
