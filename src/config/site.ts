@@ -54,7 +54,7 @@ export const NAV_LINKS = [
 
 export const HERO = {
   badge: "project slots open this month",
-  titleTop: "Fast websites &",
+  titleTop: "We build fast websites &",
   titleItalic: "smart tools",
   titleBottom: "that grow your business.",
   subtitle:
