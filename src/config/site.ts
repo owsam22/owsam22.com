@@ -283,6 +283,12 @@ export const MORE_WORK = [
     tag: "Open source",
     github: "https://github.com/owsam22/under-construction-page",
     live: "",
+  },
+  {
+    name: "Visit My Portfolio",
+    note: "know more about me and my works",
+    tag: "personal portfolio",
+    live: "https://portfolio.owsam22.com"
   }
 ];
 
