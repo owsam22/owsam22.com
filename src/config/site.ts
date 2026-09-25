@@ -10,7 +10,7 @@ export const CONTACT = {
   // ✏️ TODO — put YOUR WhatsApp number here (international format, digits only)
   whatsappNumber: "916203771648",
 
-  email: "22.samarpan@gmail.com",
+  email: "samarpan@owsam22.com",
   location: "India · works worldwide",
   replyTime: "usually replies within a few hours",
 
@@ -24,7 +24,7 @@ export const CONTACT = {
 export const SOCIALS = [
   { label: "GitHub", url: "https://github.com/owsam22", icon: "github" },
   { label: "LinkedIn", url: "https://linkedin.com/in/owsam22", icon: "linkedin" },
-  { label: "Email", url: "mailto:22.samarpan@gmail.com", icon: "mail" },
+  { label: "Email", url: "mailto:samarpan@owsam22.com", icon: "mail" },
   { label: "X / Twitter", url: "", icon: "x" }, // ✏️ add url to enable
   { label: "Instagram", url: "", icon: "instagram" }, // ✏️ add url to enable
 ] as const;
