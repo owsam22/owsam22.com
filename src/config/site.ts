@@ -104,6 +104,8 @@ export type Service = {
   points: string[];
   priceHint: string;
   waMessage: string;
+  image: string;
+  imageAlt: string;
 };
 
 export const SERVICES: Service[] = [
@@ -121,6 +123,9 @@ export const SERVICES: Service[] = [
     priceHint: "from ₹5,999",
     waMessage:
       "Hi Samarpan! I need a business website. Can we discuss what it would look like for my business?",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Business website on a laptop screen",
   },
   {
     icon: "layout",
@@ -136,6 +141,9 @@ export const SERVICES: Service[] = [
     priceHint: "custom quote",
     waMessage:
       "Hi Samarpan! I want to discuss a web app / dashboard for my business. Here's roughly what I need:",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Analytics dashboard on a computer screen",
   },
   {
     icon: "bot",
@@ -151,6 +159,9 @@ export const SERVICES: Service[] = [
     priceHint: "from ₹9,999",
     waMessage:
       "Hi Samarpan! I'm interested in automating parts of my business. The most time-consuming thing I do is:",
+    image:
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "AI workflow and automation interface",
   },
   {
     icon: "wrench",
@@ -166,6 +177,9 @@ export const SERVICES: Service[] = [
     priceHint: "from ₹2,999",
     waMessage:
       "Hi Samarpan! My current website needs fixing / a refresh. Here's the link:",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Website optimization and speed improvement concept",
   },
 ];
 
@@ -183,7 +197,8 @@ export type Project = {
   github: string; // "" = no public repo (client work) — source button hides automatically
   live: string; //   "" = no live link — demo button hides automatically
   liveLabel?: string;
-  mock: "finance" | "chat" | "galaxy" | "pixel" | "safari";
+  image: string;
+  imageAlt: string;
 };
 
 export const FEATURED_WORK: Project[] = [
@@ -198,7 +213,8 @@ export const FEATURED_WORK: Project[] = [
     github: "",
     live: "https://www.rajajijunglesafaribooking.com/",
     liveLabel: "Visit live site",
-    mock: "safari",
+    image: "/images/work/sukoon-safari.png",
+    imageAlt: "Sukoon Safari booking website preview",
   },
   {
     name: "Accrue",
@@ -210,7 +226,8 @@ export const FEATURED_WORK: Project[] = [
     stack: ["React", "Node.js", "MongoDB", "Google Sync"],
     github: "https://github.com/owsam22/Accrue-web",
     live: "",
-    mock: "finance",
+    image: "/images/work/accrue.svg",
+    imageAlt: "Accrue finance dashboard preview",
   },
   {
     name: "QuickChat",
@@ -222,7 +239,8 @@ export const FEATURED_WORK: Project[] = [
     stack: ["TypeScript", "WebSockets", "React"],
     github: "https://github.com/owsam22/quick-chat",
     live: "",
-    mock: "chat",
+    image: "/images/work/quickchat.svg",
+    imageAlt: "QuickChat messaging app preview",
   },
   {
     name: "Pixel Engineer",
@@ -234,7 +252,8 @@ export const FEATURED_WORK: Project[] = [
     stack: ["PixiJS", "Canvas", "FSM AI"],
     github: "https://github.com/owsam22/pixel-engineer-live-wallpaper",
     live: "",
-    mock: "pixel",
+    image: "/images/work/pixel-engineer.svg",
+    imageAlt: "Pixel Engineer interactive art preview",
   },
 ];
 
