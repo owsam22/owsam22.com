@@ -37,6 +37,10 @@ export default function Services() {
                   </span>
                 </div>
 
+                <div className="mt-5 overflow-hidden rounded-2xl border-2 border-ink bg-cream">
+                  <img src={s.image} alt={s.imageAlt} className="h-44 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] sm:h-52" />
+                </div>
+
                 <h3 className="display mt-5 text-xl font-bold tracking-tight sm:mt-6 sm:text-[26px]">
                   {s.title}
                 </h3>
