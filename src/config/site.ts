@@ -294,7 +294,7 @@ export const MORE_WORK = [
     note: "npm CLI to preview localhost sites on Android over USB.",
     tag: "Dev tool",
     github: "https://github.com/owsam22/synkin-page",
-    live: "",
+    live: "https://synkin.owsam22.com",
   },
   {
     name: "Coming Soon Page",
